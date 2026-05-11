@@ -144,6 +144,9 @@ Frontend runs on:
 http://localhost:5173
 ```
 
+NOTE: The application has now been deployed and will open on your browser at: https://mygrid-ai.onrender.com
+
+
 **API Endpoints**
 
 - GET  /grid/status
