@@ -4,6 +4,18 @@ MyGrid AI is a real-time smart grid intelligence platform that simulates renewab
 
 This project demonstrates how modern software can be used to monitor, predict, and stabilise a simulated energy network using a React frontend, FastAPI backend, WebSocket telemetry and Python.
 
+## Platform Preview
+
+### Dashboard Overview
+![Dashboard Overview](screenshots/dashboard-overview.png)
+
+### AI Control Center
+![AI Control Center](screenshots/ai-control-center.png)
+
+### Live Energy Monitoring
+![Live Energy Monitoring](screenshots/live-energy-monitor.png)
+
+
 **Key Features**
 
 - Real-time smart grid dashboard
