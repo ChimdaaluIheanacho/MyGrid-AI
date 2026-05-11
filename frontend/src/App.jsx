@@ -19,14 +19,14 @@ function App() {
   const [events, setEvents] = useState([]);
 
   const fetchEvents = useCallback(async () => {
-    const response = await fetch("http://127.0.0.1:8000/grid/events");
+    const response = await fetch("https://mygrid-ai-backend.onrender.com/grid/events");
     const data = await response.json();
     setEvents(data.events || []);
   }, []);
 
   const toggleControl = async (controlName) => {
     const response = await fetch(
-      `http://127.0.0.1:8000/grid/controls/${controlName}`,
+      `https://mygrid-ai-backend.onrender.com/grid/controls/${controlName}`,
       {
         method: "POST",
       }
@@ -39,7 +39,7 @@ function App() {
   };
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/grid/controls")
+    fetch("https://mygrid-ai-backend.onrender.com/grid/controls")
       .then((response) => response.json())
       .then((data) => setControls(data));
 
@@ -49,7 +49,7 @@ function App() {
       fetchEvents();
     }, 2000);
 
-    fetch("http://127.0.0.1:8000/grid/history")
+    fetch("https://mygrid-ai-backend.onrender.com/grid/history")
       .then((response) => response.json())
       .then((data) => {
         const formattedHistory = data.history.map((entry) => ({
@@ -61,7 +61,7 @@ function App() {
         setHistory(formattedHistory.slice(-20));
       });
 
-    const socket = new WebSocket("ws://127.0.0.1:8000/ws/grid");
+    const socket = new WebSocket("wss://mygrid-ai-backend.onrender.com/ws/grid");
 
     socket.onmessage = (event) => {
       const data = JSON.parse(event.data);
